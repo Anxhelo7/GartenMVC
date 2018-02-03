@@ -1,0 +1,34 @@
+﻿@model IEnumerable<garten.Models.kindergarten>
+
+@{
+    ViewBag.Title = "kindergartens";
+    Layout = "~/Views/MasterLayout.cshtml";
+}
+
+
+<form id="frm" action="Addkindergartens" method="post">
+    <input name="name" type="text" />
+    <input type="submit" value="Add" />
+</form>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>Name</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Name
+            </td>
+        </tr>
+    }
+
+</table>
+
